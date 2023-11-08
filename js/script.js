@@ -1,5 +1,5 @@
 const BASEURL = "https://pokeapi.co/api/v2/pokemon/"
-const BASEURLIMG = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+
 
 function getPokemonList(){
     let listaPokemons = []
@@ -31,7 +31,23 @@ function showPokemonList(){
 }
 
 
+//Começo da resolução
+function showSixPokemons(){
+    let listaseis = []
+    fetch(BASEURL+'?limit=6').then((Response)=>{Response.json().then((Abacate)=>{console.log(Abacate.results)})})
+    
+}
+
+//Começo da Resolução
+function showPokemonById(){
+    fetch(BASEURL + 5).then( (Response) => { Response.json().then( (Pokemon) => {console.log(Pokemon.name)}) } )
+
+    
+}
+
+
 /*
+Exemplo de código usando o modificador async na função e await para aguardar retornos.
 async function getData() {
        let res = await fetch(BASEURL+ '?limit=151')
        let result = await res.json()
